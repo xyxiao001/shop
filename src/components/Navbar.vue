@@ -63,7 +63,7 @@ export default {
     height: 50px;
     position: relative;
     font-size: 23px;
-    border-bottom: 1px solid rgba(88, 85, 25, 0.2);
+    // border-bottom: 1px solid rgba(88, 85, 25, 0.2);
 
     section.show-logo {
       padding: 8px 15px 10px 15px;
@@ -87,16 +87,8 @@ export default {
         width: 150px;
         text-align: center;
         margin: auto;
-      }
-
-      &::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: #d9d9d9;
+        color: #ac2627;
+        font-weight: bold;
       }
     }
     section.menu {
@@ -105,17 +97,17 @@ export default {
       top: 99%;
       left: 0;
       width: 100%;
-      height: 60px;
-      transition: all 0.2s ease-out;
+      transition: all 0.25s ease-out;
       font-size: 16px;
       overflow: hidden;
       color: #666;
       background-color: white;
+      z-index: 999;
 
       a {
         display: inline-block;
         width: 23%;
-        height: 100%;
+        height: 95%;
         text-align: center;
         padding-top: 12px;
         color: #666;
@@ -136,8 +128,9 @@ export default {
     }
 
     section.menu-show {
-      height: 60px;
+      height: 65px;
       opacity: 1;
+      border-top: 1px solid #d9d9d9;
     }
 
     section.menu-hide {

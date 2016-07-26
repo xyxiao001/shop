@@ -79,6 +79,9 @@ module.exports = {
   eslint: {
     formatter: require('eslint-friendly-formatter')
   },
+  externals: {
+   jQuery: 'jQuery'
+  },
   vue: {
     loaders: utils.cssLoaders()
   }
