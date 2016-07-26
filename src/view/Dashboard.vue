@@ -19,5 +19,9 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
+  body {
+    margin: auto;
+    max-width: 800px;
+  }
 </style>

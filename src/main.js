@@ -13,7 +13,7 @@ const router = new VueRouter({
 
 router.map({
   '/': {
-    name: Dashboard,
+    name: 'Dashboard',
     component: Dashboard
   }
 })
