@@ -12,7 +12,7 @@
       </a>
       <a href="#">
         <i class="fa fa-clone"></i>
-        <span>专题</span>
+        <span>热门</span>
       </a>
       <a href="#">
         <i class="fa fa-th"></i>

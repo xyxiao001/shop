@@ -87,6 +87,7 @@ export default {
             // 需要后退次数
             goId = Math.round(go / 100)
             showId = showId - goId
+            showId = showId > 0 ? showId : 0
           }
         }
         showId = showId < 4 ? showId : 4
