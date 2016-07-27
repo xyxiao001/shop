@@ -7,11 +7,7 @@
     </div>
     <div class="item-control">
       <ul class="show-control">
-        <li class="choose"></li>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li v-for="item in items"></li>
       </ul>
     </div>
   </section>
@@ -28,6 +24,8 @@ export default {
   computed: {},
   props: ['items'],
   ready: function () {
+    // 默认第一个轮播被选中
+    document.querySelector('.show-control li').className = 'choose'
     var showId = 0
     var slide = document.querySelector('.slideWarp')
     var setSlide = setInterval(function () {
@@ -138,7 +136,7 @@ export default {
     div.item-control {
       position: absolute;
       width: 150px;
-      height: 50px;
+      height: 30px;
       left: 50%;
       margin-left: -80px;
       top: 100%;
@@ -147,7 +145,7 @@ export default {
       ul {
         margin: 0;
         width: 100%;
-        height: 50px;
+        height: 30px;
         padding-left: 0px;
 
         li {
@@ -170,9 +168,14 @@ export default {
 
   @media screen and (max-width: 350px) {
     section.slide {
+      height: 180px;
+
+      div.slideWarp {
+        height: 180px;
+      }
 
       div.item-control {
-        margin-top: -50px;
+        margin-top: -25px;
       }
     }
   }

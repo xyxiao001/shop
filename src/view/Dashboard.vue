@@ -1,11 +1,13 @@
 <template lang="html">
   <Navbar></Navbar>
   <Slide :items="slideImg"></Slide>
+  <Notice :notices ="notices"></Notice>
 </template>
 
 <script>
 import Navbar from '../components/Navbar'
 import Slide from '../components/SlideWarp'
+import Notice from '../components/Notice'
 export default {
   data: function () {
     return {
@@ -30,6 +32,12 @@ export default {
           id: 5,
           src: 'http://yanxuan.nosdn.127.net/51bfd8a82909b3a6225ccf7cb2b1325a.jpg?imageView&quality=85&thumbnail=750x400'
         }
+      ],
+      notices: [
+        '恭喜用户001成功兑换iphone6s',
+        '恭喜用户002成功兑换ipad Air2',
+        '恭喜用户003成功兑换ipad Air2',
+        '恭喜用户004成功兑换小米5'
       ]
     }
   },
@@ -39,7 +47,8 @@ export default {
   methods: {},
   components: {
     Navbar,
-    Slide
+    Slide,
+    Notice
   }
 }
 </script>
