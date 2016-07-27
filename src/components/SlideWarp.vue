@@ -91,6 +91,7 @@ export default {
             showId = showId - goId
           }
         }
+        showId = showId < 4 ? showId : 4
         var goLeft = -(showId * 100) + '%'
         $(slide).animate({left: goLeft})
         $('.show-control li').eq(showId).addClass('choose').siblings().removeClass('choose')
