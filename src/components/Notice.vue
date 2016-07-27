@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="notice">
-    <div class="naba">
+    <div class="laba">
       <i class="fa fa-bullhorn" aria-hidden="true"></i>
     </div>
     <div class="show-notice">
@@ -35,10 +35,11 @@ export default {
     border-bottom: 1px solid rgba(88, 85, 25, 0.2);
     overflow: hidden;
 
-    .naba {
+    .laba {
       position: absolute;
       width: 30px;
       height: 30px;
+      left: 5px;
       background-color: white;
       z-index: 98;
 
