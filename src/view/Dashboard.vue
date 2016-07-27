@@ -1,25 +1,27 @@
 <template lang="html">
-  <Navbar></Navbar>
-  <Slide :items="slideImg"></Slide>
-  <Notice :notices ="notices"></Notice>
-  <div class="hot-commodity commodity">
-    <div class="title">
-      <a href="#">
-        热门兑换  <i class="fa fa-angle-right" aria-hidden="true"></i>
-      </a>
+  <div class="content">
+    <Navbar></Navbar>
+    <Slide :items="slideImg"></Slide>
+    <Notice :notices ="notices"></Notice>
+    <div class="hot-commodity commodity">
+      <div class="title">
+        <a href="#">
+          热门兑换  <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="row">
+        <Commodity v-for="hot in hots" :item="hot"></Commodity>
+      </div>
     </div>
-    <div class="row">
-      <Commodity v-for="hot in hots" :item="hot"></Commodity>
-    </div>
-  </div>
-  <div class="less-time commodity">
-    <div class="title">
-      <a href="#">
-        限时兑换  <i class="fa fa-angle-right" aria-hidden="true"></i>
-      </a>
-    </div>
-    <div class="row">
-      <Commodity v-for="hot in hots" :item="hot"></Commodity>
+    <div class="less-time commodity">
+      <div class="title">
+        <a href="#">
+          限时兑换  <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="row">
+        <Commodity v-for="hot in hots" :item="hot"></Commodity>
+      </div>
     </div>
   </div>
 </template>
@@ -105,8 +107,11 @@ export default {
   body {
     margin: auto;
     max-width: 768px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+  }
+
+  .content {
+    width: 100%;
+    overflow: hidden;
   }
 
   .commodity {
