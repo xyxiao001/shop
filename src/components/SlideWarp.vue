@@ -76,11 +76,14 @@ export default {
       }
 
       function touchEnd (event) {
-        if (go < 0 && showId < 4) {
+        if (go < 0) {
           go = ~(go)
           // 需要前进次数
           var goId = Math.round(go / 100)
           showId = showId + goId
+          if (showId > 4) {
+            showId = 4
+          }
         } else {
           if (showId !== 0) {
             // 需要后退次数
