@@ -2,10 +2,20 @@
   <Navbar></Navbar>
   <Slide :items="slideImg"></Slide>
   <Notice :notices ="notices"></Notice>
-  <div class="hot-commodity">
+  <div class="hot-commodity commodity">
     <div class="title">
       <a href="#">
         热门兑换  <i class="fa fa-angle-right" aria-hidden="true"></i>
+      </a>
+    </div>
+    <div class="row">
+      <Commodity v-for="hot in hots" :item="hot"></Commodity>
+    </div>
+  </div>
+  <div class="less-time commodity">
+    <div class="title">
+      <a href="#">
+        限时兑换  <i class="fa fa-angle-right" aria-hidden="true"></i>
       </a>
     </div>
     <div class="row">
@@ -99,7 +109,7 @@ export default {
     overflow-y: scroll;
   }
 
-  .hot-commodity {
+  .commodity {
     width: 100%;
 
     .title {
