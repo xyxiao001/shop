@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="col-xs-5">
+  <div class="col-xs-6">
     <a href="#" class="good-commodity">
       <img v-bind:src="item.src" v-bind:alt="item.id" />
       <p class="commodity-name">{{ item.name }}</p>
@@ -26,7 +26,6 @@ export default {
 <style lang="scss">
   a.good-commodity {
     display: inline-block;
-    margin-left: 25%;
     width: 100%;
     height: 180px;
 
@@ -42,6 +41,8 @@ export default {
     }
 
     p.commodity-name {
+      width: 90%;
+      margin: auto;
       letter-spacing: 1px;
       text-overflow: ellipsis;
       white-space: nowrap;
