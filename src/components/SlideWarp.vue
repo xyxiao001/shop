@@ -23,29 +23,75 @@ import $ from 'jquery'
 export default {
   data: function () {
     return {
-      showId: 0
     }
   },
   computed: {},
   props: ['items'],
   ready: function () {
-    var that = this
+    var showId = 0
     var slide = document.querySelector('.slideWarp')
-    setInterval(function () {
-      if (that.showId < 4) {
-        that.showId = that.showId + 1
-        slide.style.left = -(that.showId * 100) + '%'
-        $('.show-control li').eq(that.showId).addClass('choose').siblings().removeClass('choose')
+    var setSlide = setInterval(function () {
+      if (showId < 4) {
+        showId = showId + 1
+        var goLeft = -(showId * 100) + '%'
+        $(slide).animate({left: goLeft})
+        $('.show-control li').eq(showId).addClass('choose').siblings().removeClass('choose')
       } else {
-        that.showId = 0
-        slide.style.left = '0px'
+        showId = 0
+        $(slide).animate({left: '0px'})
         $('.show-control li').eq(0).addClass('choose').siblings().removeClass('choose')
       }
-    }, 5000)
+    }, 500000)
     $('.show-control li').click(function () {
       $(this).addClass('choose').siblings().removeClass('choose')
-      that.showId = $(this).index()
-      slide.style.left = -(that.showId * 100) + '%'
+      showId = $(this).index()
+      var goLeft = -(showId * 100) + '%'
+      $(slide).animate({left: goLeft})
+    })
+    $(function () {
+      var startX, endX, go, old
+      // 屏幕大小
+      var page = document.body.clientWidth
+      var el = document.querySelectorAll('.slide-item')
+      el.forEach(function (val) {
+        val.addEventListener('touchstart', touchStart, false)
+        val.addEventListener('touchmove', touchMove, false)
+        val.addEventListener('touchend', touchEnd, false)
+      })
+      function touchStart (event) {
+        // 当用户按压屏幕 清除自动轮播
+        clearInterval(setSlide)
+        // 横坐标
+        startX = event.touches[0].clientX
+        // 本来有的
+        old = slide.style.left || '00'
+        old = old.substring(0, old.length - 1)
+      }
+      function touchMove (event) {
+        endX = event.touches[0].clientX
+        // 需要移动百分比
+        go = (endX - startX) / page * 100
+        var goes = Number(go) + Number(old)
+        slide.style.left = (goes) + '%'
+      }
+
+      function touchEnd (event) {
+        if (go < 0 && showId < 4) {
+          go = ~(go)
+          // 需要前进次数
+          var goId = Math.round(go / 100)
+          showId = showId + goId
+        } else {
+          if (showId !== 0) {
+            // 需要后退次数
+            goId = Math.round(go / 100)
+            showId = showId - goId
+          }
+        }
+        var goLeft = -(showId * 100) + '%'
+        $(slide).animate({left: goLeft})
+        $('.show-control li').eq(showId).addClass('choose').siblings().removeClass('choose')
+      }
     })
   },
   attached: function () {},
@@ -70,7 +116,7 @@ export default {
       height: 200px;
       overflow: hidden;
       z-index: 98%;
-      transition: left 0.5s ease-out;
+      //transition: left 0.5s ease-out;
 
       .slide-item {
         position: relative;;
