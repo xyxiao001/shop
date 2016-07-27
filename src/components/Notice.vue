@@ -37,9 +37,8 @@ export default {
 
     .laba {
       position: absolute;
-      width: 30px;
+      width: 35px;
       height: 30px;
-      left: 5px;
       background-color: white;
       z-index: 98;
 
