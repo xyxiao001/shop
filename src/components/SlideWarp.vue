@@ -41,7 +41,7 @@ export default {
         $(slide).animate({left: '0px'})
         $('.show-control li').eq(0).addClass('choose').siblings().removeClass('choose')
       }
-    }, 500000)
+    }, 5000)
     $('.show-control li').click(function () {
       $(this).addClass('choose').siblings().removeClass('choose')
       showId = $(this).index()
