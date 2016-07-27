@@ -53,11 +53,11 @@ export default {
       // 屏幕大小
       var page = document.body.clientWidth
       var el = document.querySelectorAll('.slide-item')
-      el.forEach(function (val) {
-        val.addEventListener('touchstart', touchStart, false)
-        val.addEventListener('touchmove', touchMove, false)
-        val.addEventListener('touchend', touchEnd, false)
-      })
+      for (var i = 0; i < el.length; i++) {
+        el[i].addEventListener('touchstart', touchStart, false)
+        el[i].addEventListener('touchmove', touchMove, false)
+        el[i].addEventListener('touchend', touchEnd, false)
+      }
       function touchStart (event) {
         // 当用户按压屏幕 清除自动轮播
         clearInterval(setSlide)
