@@ -33,9 +33,9 @@
         <Commodity v-for="newShop in newShops" :item="newShop"></Commodity>
       </div>
     </div>
+    <Foot></Foot>
     <Top></Top>
   </div>
-
 </template>
 
 <script>
@@ -45,6 +45,7 @@ import Notice from 'Notice'
 import Commodity from 'Commodity'
 import Commodities from 'Commodity-one'
 import Top from 'ToTop'
+import Foot from 'Footer'
 export default {
   data: function () {
     return {
@@ -163,7 +164,8 @@ export default {
     Notice,
     Commodity,
     Commodities,
-    Top
+    Top,
+    Foot
   }
 }
 </script>
