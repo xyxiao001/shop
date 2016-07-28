@@ -32,6 +32,7 @@ export default {
 <style lang="scss">
   i.go-top {
     position: fixed;
+    display: none;
     bottom: 10px;
     right: 15px;
     width: 50px;
