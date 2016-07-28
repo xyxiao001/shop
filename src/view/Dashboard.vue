@@ -27,10 +27,10 @@
 </template>
 
 <script>
-import Navbar from '../components/Navbar'
-import Slide from '../components/SlideWarp'
-import Notice from '../components/Notice'
-import Commodity from '../components/Commodity'
+import Navbar from 'Navbar'
+import Slide from 'SlideWarp'
+import Notice from 'Notice'
+import Commodity from 'Commodity'
 export default {
   data: function () {
     return {
