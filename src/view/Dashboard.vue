@@ -33,7 +33,9 @@
         <Commodity v-for="newShop in newShops" :item="newShop"></Commodity>
       </div>
     </div>
+    <Top></Top>
   </div>
+
 </template>
 
 <script>
@@ -42,6 +44,7 @@ import Slide from 'SlideWarp'
 import Notice from 'Notice'
 import Commodity from 'Commodity'
 import Commodities from 'Commodity-one'
+import Top from 'ToTop'
 export default {
   data: function () {
     return {
@@ -159,7 +162,8 @@ export default {
     Slide,
     Notice,
     Commodity,
-    Commodities
+    Commodities,
+    Top
   }
 }
 </script>
@@ -171,6 +175,7 @@ export default {
   }
 
   .content {
+    position: relative;
     width: 100%;
     overflow: hidden;
   }
