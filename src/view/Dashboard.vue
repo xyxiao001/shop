@@ -20,7 +20,7 @@
         </a>
       </div>
       <div class="row">
-        <Commodity v-for="hot in hots" :item="hot"></Commodity>
+        <Commodities v-for="lessTime in lessTimes" :item="lessTime"></Commodities>
       </div>
     </div>
   </div>
@@ -31,6 +31,7 @@ import Navbar from 'Navbar'
 import Slide from 'SlideWarp'
 import Notice from 'Notice'
 import Commodity from 'Commodity'
+import Commodities from 'Commodity-one'
 export default {
   data: function () {
     return {
@@ -87,6 +88,29 @@ export default {
           name: 'Classic欧式压铸炒锅30cm',
           num: '3400积分'
         }
+      ],
+      lessTimes: [
+        {
+          id: 201,
+          src: 'http://yanxuan.nosdn.127.net/02d945e6598a1f777b504d29496ef015.png',
+          name: '2条 皇室御用超柔面巾',
+          des: '至柔至软',
+          num: '50积分'
+        },
+        {
+          id: 202,
+          src: 'http://yanxuan.nosdn.127.net/8089dc57be56c0e30a93b048cb22c708.png',
+          name: 'Ecolon不粘煎饼盘28cm',
+          des: '放心源自天然矿物中提取的陶瓷涂层',
+          num: '200积分'
+        },
+        {
+          id: 203,
+          src: 'http://yanxuan.nosdn.127.net/6925fe6e740fcaef92165528ccc3aa51.png',
+          name: '6双 精梳棉提花隐形男袜',
+          des: '撞色隐形袜，优雅随性',
+          num: '100积分'
+        }
       ]
     }
   },
@@ -98,7 +122,8 @@ export default {
     Navbar,
     Slide,
     Notice,
-    Commodity
+    Commodity,
+    Commodities
   }
 }
 </script>
