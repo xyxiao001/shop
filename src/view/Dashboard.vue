@@ -23,6 +23,16 @@
         <Commodities v-for="lessTime in lessTimes" :item="lessTime"></Commodities>
       </div>
     </div>
+    <div class="hot-commodity commodity">
+      <div class="title">
+        <a href="#">
+          新品上线  <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </a>
+      </div>
+      <div class="row">
+        <Commodity v-for="newShop in newShops" :item="newShop"></Commodity>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -110,6 +120,32 @@ export default {
           name: '6双 精梳棉提花隐形男袜',
           des: '撞色隐形袜，优雅随性',
           num: '100积分'
+        }
+      ],
+      newShops: [
+        {
+          id: 300,
+          src: 'http://yanxuan.nosdn.127.net/dffda899664bfbd79ddcae67c67a80cf.png?imageView&quality=85&thumbnail=330x330',
+          name: '太平猴魁 50克',
+          num: '388积分'
+        },
+        {
+          id: 302,
+          src: 'http://yanxuan.nosdn.127.net/2a95b16f5b147cab4845641bee738a2e.png?imageView&quality=85&thumbnail=330x330',
+          name: '日式记忆绵坐垫',
+          num: '138积分'
+        },
+        {
+          id: 303,
+          src: 'http://yanxuan.nosdn.127.net/34eb4e37662009871699b9756003e55a.png?imageView&quality=85&thumbnail=330x330',
+          name: '升级款记忆棉护椎腰靠',
+          num: '148积分'
+        },
+        {
+          id: 304,
+          src: 'http://yanxuan.nosdn.127.net/f3d23138c2f095a78268138e0dc7052a.png?imageView&quality=85&thumbnail=330x330',
+          name: '日式提花方形蔺草垫',
+          num: '78积分'
         }
       ]
     }
