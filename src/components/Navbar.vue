@@ -59,10 +59,14 @@ export default {
   }
 
   header {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 50px;
-    position: relative;
     font-size: 23px;
+    z-index: 999;
+    background-color: white;
     // border-bottom: 1px solid rgba(88, 85, 25, 0.2);
 
     section.show-logo {
@@ -136,6 +140,15 @@ export default {
     section.menu-hide {
       height: 0px;
       opacity: 0;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    header {
+      position: relative;
+      width: 768px;
+      margin: auto;
+      margin-bottom: -50px;
     }
   }
 

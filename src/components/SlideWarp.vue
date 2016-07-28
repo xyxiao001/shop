@@ -109,6 +109,7 @@ export default {
     width: 100%;
     height: 200px;
     overflow: hidden;
+    margin-top: 50px;
 
     div.slideWarp {
       position: absolute;
